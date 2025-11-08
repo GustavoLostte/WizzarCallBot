@@ -7,6 +7,10 @@ import ContactList from './components/ContactList';
 import IncomingCallNotification from './components/IncomingCallNotification';
 import TabbedInterface from './components/TabbedInterface';
 import Button from './components/Button';
+import NavBar from './components/NavBar'; // Importación existente
+import Footer from './components/Footer'; // 🌟 Nueva importación 🌟
+import RecordingsList from './components/RecordingsList'; 
+import TranscriptionsList from './components/TranscriptionsList'; 
 import { stopSpeech } from './services/speechService';
 
 // ActiveCallDisplay component definition outside App.tsx to avoid re-renders
@@ -67,22 +71,35 @@ const AppContent: React.FC = () => {
     { label: 'Historial', content: <CallHistory /> },
     { label: 'Buzón de Voz', content: <VoicemailList /> },
     { label: 'Contactos', content: <ContactList /> },
+    { label: 'Grabaciones', content: <RecordingsList /> }, 
+    { label: 'Transcripciones', content: <TranscriptionsList /> },
   ];
 
   return (
-    <div className="flex flex-col md:flex-row h-screen overflow-hidden bg-gray-100 p-2 md:p-4">
-      {/* Left Column - DialPad */}
-      <div className="md:w-1/3 lg:w-1/4 p-2 md:p-4 flex flex-col items-center">
-        <DialPad />
-      </div>
+    <div className="flex flex-col h-screen overflow-hidden bg-gray-100"> 
+      
+      {/* 1. NavBar */}
+      <NavBar title="WizzarCallBot Console" /> 
 
-      {/* Right Column - Main Content Area */}
-      <div className="md:w-2/3 lg:w-3/4 p-2 md:p-4 flex flex-col overflow-hidden">
-        <div className="flex-grow h-full">
-          <TabbedInterface tabs={tabContents} />
+      {/* 2. Contenido Principal - Ocupa el espacio restante */}
+      <div className="flex flex-col md:flex-row flex-grow p-2 md:p-4 overflow-hidden">
+        {/* Left Column - DialPad */}
+        <div className="md:w-1/3 lg:w-1/4 p-2 md:p-4 flex flex-col items-center">
+          <DialPad />
+        </div>
+
+        {/* Right Column - Main Content Area */}
+        <div className="md:w-2/3 lg:w-3/4 p-2 md:p-4 flex flex-col overflow-hidden">
+          <div className="flex-grow h-full">
+            <TabbedInterface tabs={tabContents} />
+          </div>
         </div>
       </div>
+      
+      {/* 3. Footer */}
+      <Footer /> 
 
+      {/* Notificaciones y Llamada Activa (están en fixed, pero se mantienen aquí por claridad) */}
       <IncomingCallNotification />
       <ActiveCallDisplay />
     </div>

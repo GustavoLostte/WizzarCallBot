@@ -1,20 +1,48 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🤖 WizzardCallBot: Plataforma de Llamadas Inteligentes  
 
-# Run and deploy your AI Studio app
+**WizzardCallBot** es una solución avanzada para la gestión y automatización de comunicaciones de voz. Diseñado con una arquitectura modular y una interfaz moderna en React, integra capacidades de inteligencia artificial mediante la API de **Gemini**, ofreciendo marcado, historial de llamadas, buzón de voz y transcripciones automáticas.  
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/drive/1xN5vJmjmsnfT0KQtYRVnzbrF2bmoqUw3
+## ✨ Características Principales  
 
-## Run Locally
+- **DialPad Interactivo**  
+  Teclado numérico funcional con soporte para teclado físico (PC).  
 
-**Prerequisites:**  Node.js
+- **Gestión de Comunicaciones**  
+  Historial de llamadas, buzón de voz y lista de contactos.  
 
+- **IA Integrada (Gemini API)**  
+  Transcripciones automáticas y análisis inteligente de llamadas.  
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Arquitectura Modular**  
+  Componentes desacoplados y mantenibles para escalabilidad.  
+
+- **UX/UI Moderna**  
+  Construido con **React** y estilizado con **Tailwind CSS** para un diseño responsivo y limpio.  
+
+---
+
+## 🛠️ Stack Tecnológico  
+
+| Componente        | Tecnología         | Propósito |
+|-------------------|-------------------|-----------|
+| **Frontend**      | React + TypeScript | UI modular y tipado estricto |
+| **Estilos**       | Tailwind CSS       | Estilizado rápido y responsivo |
+| **Estado VoIP**   | Context API        | Gestión global de llamadas activas |
+| **IA/NLP**        | Gemini API         | Servicios de voz, transcripciones y análisis |
+| **Herramientas**  | Vite               | Servidor de desarrollo y empaquetador |
+
+---
+
+## 🚀 Puesta en Marcha (Run Locally)  
+
+Este proyecto fue generado a partir de una plantilla de **Google AI Studio** y está listo para ejecutarse en tu entorno local.  
+
+### Prerrequisitos  
+- Node.js (versión LTS recomendada)  
+
+### 1. Configuración del Proyecto  
+Instala las dependencias:  
+```bash
+npm install
